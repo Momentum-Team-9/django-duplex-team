@@ -23,6 +23,7 @@ class Deck(models.Model):
 class Flashcard(models.Model):
     title = models.CharField(max_length=250)
     question = models.TextField(blank=True)
+    answer = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     flashcard = models.ForeignKey(
         Deck,

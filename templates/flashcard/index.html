@@ -4,11 +4,14 @@
     {% if user.is_authenticated %}
     <p>Hello, {{ user.username }}!</p>
     <a href="{% url 'auth_logout' %}" class="">Logout</a>
-    <h1>Freeshelf</h1>
     <a>Flashcard</a>
     {% else %}
     <p>Login</p>
     <a href="{% url 'auth_login' %}" class="">Login</a>
     {% endif %}
+
+    <br>
+    <a href="{% url 'list_deck' %}">View Your Decks</a>
+    <br>
 </div>
 {% endblock content %}
