@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='container'>
+    
+    <div class='card_front'>
+            <h1>What would you like to name this deck?</h1>
+        
+        <br>
+        <form>
+            <label for='deckname'>Write name here:</label><br>
+            <input type="text" id='deckname' name='deckname'>
+        </form>
+    
+        <div class='submit_button'>
+            <button type='submit'>Submit</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

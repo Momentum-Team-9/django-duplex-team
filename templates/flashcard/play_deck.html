@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Deck</title>
-</head>
-<body>
-    <div class='card'>
-        <div class='container'>
+<div class='container'>
+    <div class='flip_box'>
+        <div class='card_front'>
             <h1>This is the question</h1>
+        <br></br>
+    <br></br>
+<br></br>
+        
+    
+        <div class='flip_button'>
+            <button type='submit'>Show Answer</button>
         </div>
-    <div class='container'>
-        <button class='btn answer'>Show Answer</button>
     </div>
-</body>
-</html>
+        </div>
+</div>
+        <div class='back_card'>
+            <h2>This is the answer</h2>
+        </div>
 {% endblock %}
