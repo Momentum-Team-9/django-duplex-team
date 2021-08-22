@@ -20,7 +20,7 @@ from flashcard import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name="index"),
-    path("flashcard/", views.list_deck, name="list_deck"),
-    path("flashcard/create/", views.create_deck, name="create_deck"),
+    path("play/", views.play_deck, name="play_deck"),
+    path("create/", views.create_deck, name="create_deck"),
     path('accounts/', include('registration.backends.simple.urls')),
 ]
