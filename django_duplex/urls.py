@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from flashcard import views 
+from flashcard import views as flashcard_views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.index, name="index"),
-    path("play/", views.play_deck, name="play_deck"),
-    path("create/", views.create_deck, name="create_deck"),
+    path("", flashcard_views.list_all_decks, name="list_all_decks"),
+    path("cards/", flashcard_views.list_all_cards, name="list_all_cards"),
     path('accounts/', include('registration.backends.simple.urls')),
 ]
