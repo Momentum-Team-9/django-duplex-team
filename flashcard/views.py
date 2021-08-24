@@ -13,5 +13,9 @@ def list_all_cards(request):
     cards = Flashcard.objects.all()
     return render(request, "flashcard/list_all_cards.html", {"cards": cards})
 
+def view_deck(request, pk):
+    deck = get_object_or_404(Deck, id=pk)
+    return render(request, "flashcard/view_deck.html", {"deck": deck})
+
 
 
