@@ -3,7 +3,8 @@
 <div class='container'>
     <h3>{{deck.title}}</h3>
     {% for card in deck.cards.all %}
-    Hi
+    <p>{{ card.question }}</p>
+    <p>{{ card.answer }}</p>
     {% endfor %}
         </div>
 {% endblock %}

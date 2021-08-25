@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", flashcard_views.list_all_decks, name="list_all_decks"),
     path("cards/", flashcard_views.list_all_cards, name="list_all_cards"),
+    path("deck/create/", flashcard_views.create_deck, name="create_deck"),
     path("deck/<int:pk>/", flashcard_views.view_deck, name="view_deck"),
     path('accounts/', include('registration.backends.simple.urls')),
 ]

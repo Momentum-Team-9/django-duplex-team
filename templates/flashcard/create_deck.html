@@ -6,14 +6,18 @@
             <h1>What would you like to name this deck?</h1>
         
         <br>
-        <form>
-            <label for='deckname'>Write name here:</label><br>
-            <input type="text" id='deckname' name='deckname'>
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <label for="{{field.id_for_label}}"> {{field.label}}</label>
+            {{ field }}
+            {% endfor %}
+            <div class='submit_button'>
+                <button type='submit'>Submit</button>
+            </div>
         </form>
     
-        <div class='submit_button'>
-            <button type='submit'>Submit</button>
-        </div>
+       
     </div>
 </div>
 {% endblock %}
