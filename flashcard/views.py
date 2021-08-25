@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import User, Flashcard, Deck
-from .forms import DeckForm
+from .forms import DeckForm, CardForm
 
 # Create your views here.
 def index(request):
@@ -30,6 +30,19 @@ def create_deck(request):
         form = DeckForm()
     body = {"form": form}
     return render(request, "flashcard/create_deck.html", body)
+
+def create_card(request):
+    if request.method == "POST":
+        form = CardForm(data=request.POST)
+        if form.is_valid():
+            card = form.save(commit=False)
+            card.user = request.user
+            card.save()
+            return redirect("view_deck", pk=card.pk)
+    else:
+        form = CardForm()
+    body = {"form": form}
+    return render(request, "flashcard/create_card.html", body)
     
 
 
