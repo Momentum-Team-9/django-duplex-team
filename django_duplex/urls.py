@@ -22,8 +22,9 @@ urlpatterns = [
     path("", flashcard_views.index, name="index"),
     path("home/", flashcard_views.list_all_decks, name="list_all_decks"),
     path("cards/", flashcard_views.list_all_cards, name="list_all_cards"),
+    path("play/<int:pk>/", flashcard_views.play_deck, name="play_deck"),
     path("deck/create/", flashcard_views.create_deck, name="create_deck"),
-    path("deck/<int:pk>/card/", flashcard_views.create_card, name="create_card"),
+    path("card/create/", flashcard_views.create_card, name="create_card"),
     path("deck/<int:pk>/", flashcard_views.view_deck, name="view_deck"),
     path('accounts/', include('registration.backends.simple.urls')),
 ]

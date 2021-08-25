@@ -3,6 +3,7 @@
 <div class='container'>
     {% for deck in decks %}
     <a href="{% url 'view_deck' pk=deck.pk %}" class="">{{ deck.title }}</a>
+    <a href="{% url 'play_deck' pk=deck.pk %}">Play Deck</a>
     {% endfor %}
         </div>
 {% endblock %}

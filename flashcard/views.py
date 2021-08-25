@@ -30,23 +30,29 @@ def create_deck(request):
             deck = form.save(commit=False)
             deck.user = request.user
             deck.save()
-            return redirect("create_card", pk=deck.pk)
+            return redirect("create_card")
     else:
         form = DeckForm()
     body = {"form": form}
     return render(request, "flashcard/create_deck.html", body)
 
-def create_card(request, pk):
+def create_card(request):
     if request.method == "POST":
         form = CardForm(data=request.POST)
         if form.is_valid():
             card = form.save(commit=False)
             card.save()
-            return redirect("view_deck", pk=pk)
+            return redirect("create_card")
     else:
         form = CardForm()
     body = {"form": form}
     return render(request, "flashcard/create_card.html", body)
+
+@login_required
+def play_deck(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    if deck.user == request.user:
+        return render(request, "flashcard/play_deck.html", {"deck": deck})
     
 
 
