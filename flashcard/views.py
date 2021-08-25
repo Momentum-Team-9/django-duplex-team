@@ -11,7 +11,9 @@ def index(request):
 @login_required
 def list_all_decks(request):
     decks = Deck.objects.all().order_by("title")
-    return render(request, "flashcard/list_all_decks.html", {"decks": decks})
+    user = get_object_or_404(User, username=request.user)
+    user_decks = user.deck.filter()
+    return render(request, "flashcard/list_all_decks.html", {"decks": user_decks})
 
 def list_all_cards(request):
     cards = Flashcard.objects.all()
