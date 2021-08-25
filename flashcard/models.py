@@ -13,7 +13,7 @@ class Deck(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name="deck"
+        related_name="decks"
     )
 
     def __str__(self):

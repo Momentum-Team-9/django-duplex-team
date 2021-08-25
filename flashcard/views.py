@@ -12,7 +12,7 @@ def index(request):
 def list_all_decks(request):
     decks = Deck.objects.all().order_by("title")
     user = get_object_or_404(User, username=request.user)
-    user_decks = user.deck.filter()
+    user_decks = user.decks.filter()
     return render(request, "flashcard/list_all_decks.html", {"decks": user_decks})
 
 def list_all_cards(request):
