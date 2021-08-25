@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+
+{% if user.is_authenticated %}
+<p>Hello, {{ user.username }}!</p>
+<a href="{% url 'auth_logout' %}" class="">Logout</a>
+<a>Flashcard App</a>
+{% else %}
+<p>Login</p>
+<a href="{% url 'auth_login' %}" class="">Login</a>
+{% endif %}
+
 <div class='container'>
     {% for card in cards %}
     <h3>{{card.question}}</h3>
