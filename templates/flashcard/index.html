@@ -6,7 +6,6 @@
     <p>Hello, {{ user.username }}!</p>
     <a href="{% url 'auth_logout' %}" class="">Logout</a>
     {% else %}
-    <p>Login</p>
     <a href="{% url 'auth_login' %}" class="">Login</a>
     {% endif %}
 
