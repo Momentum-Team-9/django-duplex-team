@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class='container'>
+
     {% for card in cards %}
-    <h3>{{card.question}}</h3>
-    <h4>{{card.answer}}</h4>
-    {% endfor %}
-        </div>
+    <article class="card">
+    {{card.question}}
+    {{card.answer}} </article>
+    {% endfor %} 
 {% endblock %}

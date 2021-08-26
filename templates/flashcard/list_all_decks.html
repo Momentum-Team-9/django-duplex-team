@@ -6,11 +6,13 @@
 <br>
 <a href="{% url 'create_deck' %}">Create Your Decks</a>
 <br>
+<a href="{% url 'list_all_cards' %}">View All Cards</a>
+<br>
 
 <div class='container'>
     {% for deck in decks %}
-    <p> <a href="{% url 'view_deck' pk=deck.pk %}" class=""> View {{ deck.title }}</a></p>
-   <p> <a href="{% url 'play_deck' pk=deck.pk %}" class="">Play {{ deck.title }}</a></p>
+    <article class="card"> <a href="{% url 'view_deck' pk=deck.pk %}" class=""> View {{ deck.title }}</a>
+   <a href="{% url 'play_deck' pk=deck.pk %}" class="">Play {{ deck.title }}</a></article>
    <br></br>
     {% endfor %}
         </div>
