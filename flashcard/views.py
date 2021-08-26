@@ -15,14 +15,17 @@ def list_all_decks(request):
     user_decks = user.decks.filter()
     return render(request, "flashcard/list_all_decks.html", {"decks": user_decks})
 
+@login_required
 def list_all_cards(request):
     cards = Flashcard.objects.all()
     return render(request, "flashcard/list_all_cards.html", {"cards": cards})
 
+@login_required
 def view_deck(request, pk):
     deck = get_object_or_404(Deck, id=pk)
     return render(request, "flashcard/view_deck.html", {"deck": deck})
 
+@login_required
 def create_deck(request):
     if request.method == "POST":
         form = DeckForm(data=request.POST)
@@ -36,6 +39,7 @@ def create_deck(request):
     body = {"form": form}
     return render(request, "flashcard/create_deck.html", body)
 
+@login_required
 def create_card(request):
     if request.method == "POST":
         form = CardForm(data=request.POST)

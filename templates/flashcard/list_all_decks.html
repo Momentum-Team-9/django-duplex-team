@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <a href="{% url 'auth_logout' %}" class="">Logout</a>
+<br>
+<a href="{% url 'list_all_decks' %}">View Your Decks</a>
+<br>
+<a href="{% url 'create_deck' %}">Create Your Decks</a>
+<br>
 
 <div class='container'>
     {% for deck in decks %}
