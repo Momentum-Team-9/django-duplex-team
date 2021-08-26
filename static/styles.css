@@ -8,6 +8,14 @@
     height: 350px;
 }
 
+.answer {
+    visibility: hidden; 
+}
+
+.answer.show {
+    visibility: visible;
+}
+
 body {
     margin-top: 70px;
     background-color: #f4f4f4;

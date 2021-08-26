@@ -4,7 +4,8 @@
     <h3>{{deck.title}}</h3>
     {% for card in deck.cards.all %}
     <p>{{ card.question }}</p>
-    <p class="answer" id="{{card.pk}}">{{card.answer}}</p>
+    <p class="answer" id="a{{card.pk}}">{{card.answer}}</p>
+    <button class="answerButton" id="{{card.pk}}">Show Answer</button>
     {% endfor %}
         </div>
 {% endblock %}
