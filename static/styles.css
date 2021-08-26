@@ -3,9 +3,9 @@
     padding: 0;
 }
 
-.container, .card_front {
-    width: 380px;
-    height: 350px;
+.card_front {
+    width: 400px;
+    height: 25px;
 }
 
 .answer {
@@ -23,27 +23,20 @@ body {
     font-size: 62.5%;
 }
 
-.container, .card_front {
+.container, .deck_front {
+    width: 150px;
+    height: 150px;
     position: relative;
 }
 
-.card_front {
+.deck_front {
     position: absolute;
     text-align: center;
-    padding-top: 100px;
+    
 }
 
 .container {
-    perspective: 1200px;
+    perspective: 400px;
 }
 
-.card_front {
-    background-color: cadetblue;
-}
 
-.flip_button {
-    display: flex;
-    transition: all 0.35s linear;
-    height: 40px;
-    width: 200px   
-}

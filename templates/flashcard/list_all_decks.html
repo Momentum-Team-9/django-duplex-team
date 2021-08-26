@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
+<a href="{% url 'auth_logout' %}" class="">Logout</a>
+
 <div class='container'>
     {% for deck in decks %}
-    <a href="{% url 'view_deck' pk=deck.pk %}" class="">{{ deck.title }}</a>
-    <a href="{% url 'play_deck' pk=deck.pk %}">Play Deck</a>
+    <p> <a href="{% url 'view_deck' pk=deck.pk %}" class=""> View {{ deck.title }}</a></p>
+   <p> <a href="{% url 'play_deck' pk=deck.pk %}" class="">Play {{ deck.title }}</a></p>
     {% endfor %}
         </div>
 {% endblock %}
