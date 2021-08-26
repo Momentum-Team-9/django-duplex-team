@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
+<div class='container'>
+    <h2>Get Smart</h2>
     {% if user.is_authenticated %}
     <p>Hello, {{ user.username }}!</p>
     <a href="{% url 'auth_logout' %}" class="">Logout</a>
-    <a>Flashcard</a>
     {% else %}
     <p>Login</p>
     <a href="{% url 'auth_login' %}" class="">Login</a>
@@ -12,9 +12,6 @@
 
     <br>
     <a href="{% url 'list_all_decks' %}">View Your Decks</a>
-    <br>
-
-    <br>
     <a href="{% url 'create_deck' %}">Create Your Decks</a>
     <br>
 </div>

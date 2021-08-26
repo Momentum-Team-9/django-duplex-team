@@ -6,6 +6,7 @@
     {% for deck in decks %}
     <p> <a href="{% url 'view_deck' pk=deck.pk %}" class=""> View {{ deck.title }}</a></p>
    <p> <a href="{% url 'play_deck' pk=deck.pk %}" class="">Play {{ deck.title }}</a></p>
+   <br></br>
     {% endfor %}
         </div>
 {% endblock %}

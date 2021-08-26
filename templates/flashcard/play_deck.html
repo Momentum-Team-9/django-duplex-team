@@ -6,6 +6,11 @@
     <p>{{ card.question }}</p>
     <p class="answer" id="a{{card.pk}}">{{card.answer}}</p>
     <button class="answerButton" id="{{card.pk}}">Show Answer</button>
+    <label>
+        <input type="checkbox">
+        <span class="checkable">Correct!</span>
+      </label>
+      <br></br>
     {% endfor %}
         </div>
 {% endblock %}
