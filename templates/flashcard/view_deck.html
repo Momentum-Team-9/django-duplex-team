@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='container'>
+    <h3>{{deck.title}}</h3>
+    {% for card in deck.cards.all %}
+    <article class="card">{{ card.question }}
+    {{ card.answer }}</article>
+    <br>
+    {% endfor %}
+        </div>
+{% endblock %}
+

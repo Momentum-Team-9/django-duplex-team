@@ -1,0 +1,42 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.card_front {
+    width: 400px;
+    height: 25px;
+}
+
+.answer {
+    visibility: hidden; 
+}
+
+.answer.show {
+    visibility: visible;
+}
+
+body {
+    margin-top: 70px;
+    background-color: #f4f4f4;
+    font-family: 'Raleway', sans-serif;
+    font-size: 62.5%;
+}
+
+.container, .deck_front {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.deck_front {
+    position: absolute;
+    text-align: center;
+    
+}
+
+.container {
+    perspective: 400px;
+}
+
+

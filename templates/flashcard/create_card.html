@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    
+    <div class='card_front'>
+                <h3>Write Your Card</h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <label for="{{field.id_for_label}}"> {{field.label}}</label>
+                        {{ field }}
+                        {% endfor %}
+                        <div class='submit_button'>
+                            <button type='submit'>Publish</button>
+                        </div>
+                    </form>
+                <a href="{% url 'list_all_decks' %}">Home</a>
+       
+    </div>
+
+{% endblock %}
